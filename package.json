@@ -1,0 +1,45 @@
+{
+  "name": "react-google-places-autocomplete-modern",
+  "version": "0.1.0",
+  "description": "React Google Places autocomplete with new AutocompleteSuggestion API and legacy fallback.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --sourcemap --clean",
+    "typecheck": "tsc --noEmit",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "react",
+    "google maps",
+    "places",
+    "autocomplete",
+    "autocomplete suggestion",
+    "typescript"
+  ],
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "@types/google.maps": "^3.55.7",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.6.3"
+  }
+}
