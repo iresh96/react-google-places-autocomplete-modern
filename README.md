@@ -1,6 +1,7 @@
 # react-google-places-autocomplete-modern
 
 Production-ready React component that wraps the new **Google Maps Places AutocompleteSuggestion API** with a defensive fallback to the legacy `AutocompleteService`. Built for strict TypeScript, tree-shakeable builds, and long-term maintainability.
+![sample](https://github.com/user-attachments/assets/4455a4ad-b11d-491f-93ba-ff470db6a2d9)
 
 ## Features
 
