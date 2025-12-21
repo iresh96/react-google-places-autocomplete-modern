@@ -33,17 +33,36 @@ export function loadGoogleMapsScript(
   const url = new URL(GOOGLE_BASE_URL);
   url.searchParams.set('key', apiKey);
   url.searchParams.set('libraries', 'places');
+  url.searchParams.set('v', 'weekly');
+  url.searchParams.set('loading', 'async');
   if (language) url.searchParams.set('language', language);
   if (region) url.searchParams.set('region', region);
 
-  const src = url.toString();
+  const cacheKey = url.toString();
 
-  const existingPromise = scriptPromises.get(src);
+  const existingPromise = scriptPromises.get(cacheKey);
   if (existingPromise) {
     return existingPromise;
   }
 
+  const callbackName = `__google_maps_cb_${Math.random()
+    .toString(36)
+    .slice(2)}`;
+  url.searchParams.set('callback', callbackName);
+  const src = url.toString();
+
   const promise = new Promise<typeof google>((resolve, reject) => {
+    (window as any)[callbackName] = () => {
+      if ((window as any).google?.maps?.places) {
+        resolve((window as any).google as typeof google);
+      } else {
+        reject(
+          new Error('Google Maps API loaded but Places library is missing.')
+        );
+      }
+      delete (window as any)[callbackName];
+    };
+
     const script = document.createElement('script');
     script.src = src;
     script.async = true;
@@ -52,25 +71,14 @@ export function loadGoogleMapsScript(
       script.nonce = nonce;
     }
 
-    script.onload = () => {
-      if ((window as any).google?.maps?.places) {
-        resolve((window as any).google as typeof google);
-      } else {
-        reject(
-          new Error(
-            'Google Maps script loaded but Places library is unavailable.'
-          )
-        );
-      }
-    };
-
     script.onerror = () => {
       reject(new Error('Failed to load Google Maps script.'));
+      delete (window as any)[callbackName];
     };
 
     document.head.appendChild(script);
   });
 
-  scriptPromises.set(src, promise);
+  scriptPromises.set(cacheKey, promise);
   return promise;
 }

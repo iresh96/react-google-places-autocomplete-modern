@@ -1,8 +1,16 @@
 {
   "name": "react-google-places-autocomplete-modern",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "React Google Places autocomplete with new AutocompleteSuggestion API and legacy fallback.",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iresh96/react-google-places-autocomplete-modern.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iresh96/react-google-places-autocomplete-modern/issues"
+  },
+  "homepage": "https://github.com/iresh96/react-google-places-autocomplete-modern#readme",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",

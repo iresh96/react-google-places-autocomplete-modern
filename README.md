@@ -187,9 +187,10 @@ interface LocationAutocompleteProps {
 
 This package follows semantic versioning.
 
-- Patch releases: bug fixes
-- Minor releases: backward-compatible improvements
-- Major releases: breaking changes (with migration notes)
+## Repository & issues
+
+- Source: https://github.com/iresh96/react-google-places-autocomplete-modern
+- Issues: https://github.com/iresh96/react-google-places-autocomplete-modern/issues
 
 ## Build & publishing
 
@@ -197,6 +198,17 @@ This package follows semantic versioning.
 - Outputs ESM, CJS, and type declarations to `dist/`.
 - Tree-shakeable with `sideEffects: false`.
 - `npm run build` to produce artifacts; `npm run typecheck` for verification.
+
+## Local smoke test / demo
+
+There is a small Vite demo in `smoke-test/` for recording a GIF or sanity-checking a publish.
+
+```
+cd smoke-test
+cp .env.example .env   # add your Maps API key
+npm install            # once
+npm run dev            # open http://localhost:5173
+```
 
 ## License
 
