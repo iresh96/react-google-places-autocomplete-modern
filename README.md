@@ -186,6 +186,7 @@ interface LocationAutocompleteProps {
 ## Versioning & Stability
 
 This package follows semantic versioning.
+
 - Patch releases: bug fixes
 - Minor releases: backward-compatible improvements
 - Major releases: breaking changes (with migration notes)
