@@ -1,6 +1,6 @@
 {
   "name": "react-google-places-autocomplete-modern",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "React Google Places autocomplete with new AutocompleteSuggestion API and legacy fallback.",
   "license": "MIT",
   "repository": {
@@ -33,11 +33,25 @@
   },
   "keywords": [
     "react",
-    "google maps",
-    "places",
+    "google",
     "autocomplete",
-    "autocomplete suggestion",
-    "typescript"
+    "places",
+    "api",
+    "google-maps",
+    "google-places",
+    "react-component",
+    "react-google-autocomplete",
+    "google-autocomplete",
+    "react-google-places",
+    "google-places-autocomplete",
+    "react-google-places-autocomplete",
+    "google-places-autocomplete-service",
+    "google-places-service",
+    "react-google-places-service",
+    "google-places-widget",
+    "react-google-places-widget",
+    "google-places-api",
+    "react-google-places-api"
   ],
   "peerDependencies": {
     "react": ">=17",

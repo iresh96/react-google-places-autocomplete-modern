@@ -202,7 +202,7 @@ This package follows semantic versioning.
 
 ## Local smoke test / demo
 
-There is a small Vite demo in `smoke-test/` for recording a GIF or sanity-checking a publish.
+There is a small Vite demo in `smoke-test/` for reference.
 
 ```
 cd smoke-test
